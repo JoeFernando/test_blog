@@ -21,4 +21,18 @@ Distill is a publication format for scientific and technical writing, native to 
 
 Learn more about using Distill at <https://rstudio.github.io/distill>.
 
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(lubridate))
+
+cars
+
+qplot(data = cars, x = speed, y = dist)
+
+```
+
+
+```{r cars}
+summary(cars)
+```
 
