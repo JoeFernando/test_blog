@@ -3,10 +3,10 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "description": "Repository of tools for Commerial Analysts ",
       "author": [],
-      "contents": "\r\nTest blog to be deleted later\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-07-12T07:29:19+10:00"
+      "contents": "\r\nThe main objective of this blog is to provide tools to Analysts switch over from XL to R\r\nIf you have any questions please email me at platusresearch@gmail.com\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-12T08:05:10+10:00"
     },
     {
       "path": "index.html",

@@ -1,11 +1,14 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  Repository of tools for Commerial Analysts 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Test blog to be deleted later
+The main objective of this blog is to provide tools to Analysts switch over from `XL` to `R`
+
+
+If you have any questions please email me at `platusresearch@gmail.com`
