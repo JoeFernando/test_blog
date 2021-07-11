@@ -1,5 +1,5 @@
-name: "test_blog"
-title: "Test Blog"
+name: "test_blog_name_change"
+title: "Test Blog 1"
 description: |
   Test Blog
 output_dir: "_site"
