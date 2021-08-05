@@ -1,7 +1,7 @@
 name: "R code for Commercial Analyst"
 title: "Commercial Analyt's R Toolbox"
 description: |
-  Test Blog
+  This Blog is to help commercial analysts with tips and tricks especially using R (and a little bit of XL)
 output_dir: "_site"
 navbar:
   right:
