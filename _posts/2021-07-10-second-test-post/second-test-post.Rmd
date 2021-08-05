@@ -1,11 +1,11 @@
 ---
-title: "Updated post header"
+title: "Programatically renaming columns"
 description: |
-  A short description of the post.
+  Rename on the fly
 author:
-  - name: Nora Jones
-    url: https://example.com/norajones
-date: 07-10-2021
+  - name: Joe Fernando
+    url: 
+date: 07-19-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -13,26 +13,36 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Examples of how to use `rename_` within a pipeline
 
 ```{r}
-suppressPackageStartupMessages(library(tidyverse))
-suppressPackageStartupMessages(library(lubridate))
 
-cars
+# https://stackoverflow.com/questions/56696131/rename-if-together-with-starts-with-to-prefix-certain-columns
 
-qplot(data = cars, x = speed, y = dist)
+df1 <- data.frame(stringsAsFactors=FALSE,
+              Artist.x = c("Beatles", "Rolling Stones"),
+          Album.Year = c("Sgt. Pepper's 1967", "Sticky Fingers 1971")
+       )
+
+
+library(dplyr)
+df1 %>% rename_if(startsWith(names(.), "A"), ~paste0("df1_", .))
+
+df1 %>% rename_if(stringr::str_detect(names(.), "^A"), ~paste0("df1_", .))
+
+df1 %>% rename_at(vars(starts_with("A")), ~paste0("df1_", .))
+
+
+df1 %>% rename_if(stringr::str_detect(names(.), ".x"), ~stringr::str_remove_all(., ".x"))
+
+
+
 
 ```
 
 
-```{r cars}
-summary(cars)
-```
 

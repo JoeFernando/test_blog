@@ -1,20 +1,20 @@
 [
   {
     "path": "posts/2021-07-10-second-test-post/",
-    "title": "Updated post header",
-    "description": "A short description of the post.",
+    "title": "Programatically renaming columns",
+    "description": "Rename on the fly",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Joe Fernando",
+        "url": {}
       }
     ],
-    "date": "2021-07-10",
+    "date": "2021-07-19",
     "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n   speed dist\r\n1      4    2\r\n2      4   10\r\n3      7    4\r\n4      7   22\r\n5      8   16\r\n6      9   10\r\n7     10   18\r\n8     10   26\r\n9     10   34\r\n10    11   17\r\n11    11   28\r\n12    12   14\r\n13    12   20\r\n14    12   24\r\n15    12   28\r\n16    13   26\r\n17    13   34\r\n18    13   34\r\n19    13   46\r\n20    14   26\r\n21    14   36\r\n22    14   60\r\n23    14   80\r\n24    15   20\r\n25    15   26\r\n26    15   54\r\n27    16   32\r\n28    16   40\r\n29    17   32\r\n30    17   40\r\n31    17   50\r\n32    18   42\r\n33    18   56\r\n34    18   76\r\n35    18   84\r\n36    19   36\r\n37    19   46\r\n38    19   68\r\n39    20   32\r\n40    20   48\r\n41    20   52\r\n42    20   56\r\n43    20   64\r\n44    22   66\r\n45    23   54\r\n46    24   70\r\n47    24   92\r\n48    24   93\r\n49    24  120\r\n50    25   85\r\n\r\n\r\n\r\n     speed           dist       \r\n Min.   : 4.0   Min.   :  2.00  \r\n 1st Qu.:12.0   1st Qu.: 26.00  \r\n Median :15.0   Median : 36.00  \r\n Mean   :15.4   Mean   : 42.98  \r\n 3rd Qu.:19.0   3rd Qu.: 56.00  \r\n Max.   :25.0   Max.   :120.00  \r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-07-10-second-test-post/second-test-post_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2021-07-12T07:28:51+10:00",
-    "input_file": {}
+    "contents": "\r\nExamples of how to use rename_ within a pipeline\r\n\r\n\r\n# https://stackoverflow.com/questions/56696131/rename-if-together-with-starts-with-to-prefix-certain-columns\r\n\r\ndf1 <- data.frame(stringsAsFactors=FALSE,\r\n              Artist.x = c(\"Beatles\", \"Rolling Stones\"),\r\n          Album.Year = c(\"Sgt. Pepper's 1967\", \"Sticky Fingers 1971\")\r\n       )\r\n\r\n\r\nlibrary(dplyr)\r\ndf1 %>% rename_if(startsWith(names(.), \"A\"), ~paste0(\"df1_\", .))\r\n\r\n\r\n    df1_Artist.x      df1_Album.Year\r\n1        Beatles  Sgt. Pepper's 1967\r\n2 Rolling Stones Sticky Fingers 1971\r\n\r\ndf1 %>% rename_if(stringr::str_detect(names(.), \"^A\"), ~paste0(\"df1_\", .))\r\n\r\n\r\n    df1_Artist.x      df1_Album.Year\r\n1        Beatles  Sgt. Pepper's 1967\r\n2 Rolling Stones Sticky Fingers 1971\r\n\r\ndf1 %>% rename_at(vars(starts_with(\"A\")), ~paste0(\"df1_\", .))\r\n\r\n\r\n    df1_Artist.x      df1_Album.Year\r\n1        Beatles  Sgt. Pepper's 1967\r\n2 Rolling Stones Sticky Fingers 1971\r\n\r\ndf1 %>% rename_if(stringr::str_detect(names(.), \".x\"), ~stringr::str_remove_all(., \".x\"))\r\n\r\n\r\n          Artist          Album.Year\r\n1        Beatles  Sgt. Pepper's 1967\r\n2 Rolling Stones Sticky Fingers 1971\r\n\r\n` df1 <- data.frame(stringsAsFactors=FALSE, Artist.x = c(“Beatles”, “Rolling Stones”), Album.Year = c(“Sgt. Pepper’s 1967”, “Sticky Fingers 1971”) )\r\nlibrary(dplyr) df1 %>% rename_if(startsWith(names(.), “A”), ~paste0(“df1_”, .))\r\n`\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-07-19T20:10:40+10:00",
+    "input_file": "second-test-post.utf8.md"
   },
   {
     "path": "posts/welcome/",

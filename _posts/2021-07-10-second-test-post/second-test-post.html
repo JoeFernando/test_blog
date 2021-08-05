@@ -86,32 +86,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Updated post header</title>
+  <title>Programatically renaming columns</title>
 
-  <meta property="description" itemprop="description" content="A short description of the post."/>
+  <meta property="description" itemprop="description" content="Rename on the fly"/>
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-07-10"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-07-10"/>
-  <meta name="article:author" content="Nora Jones"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-07-19"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-07-19"/>
+  <meta name="article:author" content="Joe Fernando"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Updated post header"/>
+  <meta property="og:title" content="Programatically renaming columns"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A short description of the post."/>
+  <meta property="og:description" content="Rename on the fly"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Updated post header"/>
-  <meta property="twitter:description" content="A short description of the post."/>
+  <meta property="twitter:title" content="Programatically renaming columns"/>
+  <meta property="twitter:description" content="Rename on the fly"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Updated post header"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["07-10-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Programatically renaming columns"]},{"type":"character","attributes":{},"value":["Rename on the fly\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Joe Fernando"]},{"type":"NULL"}]}]},{"type":"character","attributes":{},"value":["07-19-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Updated post header","description":"A short description of the post.","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-10T00:00:00.000+10:00","citationText":"Jones, 2021"}
+{"title":"Programatically renaming columns","description":"Rename on the fly","authors":[{"author":"Joe Fernando","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-19T00:00:00.000+10:00","citationText":"Fernando, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1465,85 +1465,63 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Updated post header</h1>
+<h1>Programatically renaming columns</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A short description of the post.</p></p>
+<p><p>Rename on the fly</p></p>
 </div>
 
 <div class="d-byline">
-  Nora Jones <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> 
+  Joe Fernando  
   
-<br/>07-10-2021
+<br/>07-19-2021
 </div>
 
 <div class="d-article">
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
+<p>Examples of how to use <code>rename_</code> within a pipeline</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code>   speed dist
-1      4    2
-2      4   10
-3      7    4
-4      7   22
-5      8   16
-6      9   10
-7     10   18
-8     10   26
-9     10   34
-10    11   17
-11    11   28
-12    12   14
-13    12   20
-14    12   24
-15    12   28
-16    13   26
-17    13   34
-18    13   34
-19    13   46
-20    14   26
-21    14   36
-22    14   60
-23    14   80
-24    15   20
-25    15   26
-26    15   54
-27    16   32
-28    16   40
-29    17   32
-30    17   40
-31    17   50
-32    18   42
-33    18   56
-34    18   76
-35    18   84
-36    19   36
-37    19   46
-38    19   68
-39    20   32
-40    20   48
-41    20   52
-42    20   56
-43    20   64
-44    22   66
-45    23   54
-46    24   70
-47    24   92
-48    24   93
-49    24  120
-50    25   85</code></pre>
-<p><img src="second-test-post_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># https://stackoverflow.com/questions/56696131/rename-if-together-with-starts-with-to-prefix-certain-columns</span>
+
+<span class='va'>df1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>stringsAsFactors<span class='op'>=</span><span class='cn'>FALSE</span>,
+              Artist.x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Beatles"</span>, <span class='st'>"Rolling Stones"</span><span class='op'>)</span>,
+          Album.Year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Sgt. Pepper's 1967"</span>, <span class='st'>"Sticky Fingers 1971"</span><span class='op'>)</span>
+       <span class='op'>)</span>
+
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='va'>df1</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select_all.html'>rename_if</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/startsWith.html'>startsWith</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>.</span><span class='op'>)</span>, <span class='st'>"A"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"df1_"</span>, <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code>     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  </code></pre>
+<pre><code>    df1_Artist.x      df1_Album.Year
+1        Beatles  Sgt. Pepper&#39;s 1967
+2 Rolling Stones Sticky Fingers 1971</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df1</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select_all.html'>rename_if</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>.</span><span class='op'>)</span>, <span class='st'>"^A"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"df1_"</span>, <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<pre><code>    df1_Artist.x      df1_Album.Year
+1        Beatles  Sgt. Pepper&#39;s 1967
+2 Rolling Stones Sticky Fingers 1971</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df1</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select_all.html'>rename_at</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/vars.html'>vars</a></span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"A"</span><span class='op'>)</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"df1_"</span>, <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    df1_Artist.x      df1_Album.Year
+1        Beatles  Sgt. Pepper&#39;s 1967
+2 Rolling Stones Sticky Fingers 1971</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df1</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select_all.html'>rename_if</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>.</span><span class='op'>)</span>, <span class='st'>".x"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove_all</a></span><span class='op'>(</span><span class='va'>.</span>, <span class='st'>".x"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>          Artist          Album.Year
+1        Beatles  Sgt. Pepper&#39;s 1967
+2 Rolling Stones Sticky Fingers 1971</code></pre>
+</div>
+<p>` df1 &lt;- data.frame(stringsAsFactors=FALSE, Artist.x = c(“Beatles”, “Rolling Stones”), Album.Year = c(“Sgt. Pepper’s 1967”, “Sticky Fingers 1971”) )</p>
+<p>library(dplyr) df1 %&gt;% rename_if(startsWith(names(.), “A”), ~paste0(“df1_”, .))</p>
+<p>`</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
