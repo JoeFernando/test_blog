@@ -2,7 +2,7 @@
   {
     "path": "posts/2021-08-06-useful-timeseries-functions/",
     "title": "Useful `timetk` and `tidyquant` Timeseries Functions",
-    "description": "A short description of the post.",
+    "description": "`timetk` and `tidyquant` Timeseries Functions",
     "author": [
       {
         "name": "Joe Fernando",
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\r\nUseful functions in timeseries analysis:\r\n\r\n\r\n# https://www.linkedin.com/feed/update/urn:li:activity:6828828919538466816/\r\n\r\nlibrary(timetk)  \r\nlibrary(tidyquant)\r\nlibrary(tidyverse)\r\n\r\n# Download the 10 year UST data\r\n\"DGS10\" %>% \r\n  tq_get(get = \"economic.data\", from = \"1977-01-01\") %>% \r\n  \r\n  # Summarise by month\r\n  summarise_by_time(\r\n    .date_var = date,\r\n    .by       = \"month\",\r\n    ten_year_monthly = mean(price, na.rm = TRUE) / 100\r\n  ) %>% \r\n  \r\n  # Lag the monthly rate by 1 and 2 months\r\n  tk_augment_lags(\r\n    .value = ten_year_monthly,\r\n    .lags  = c(1, 2)\r\n  ) %>% \r\n  \r\n  # Generate rolling mean for 3 and 6 months\r\n  tk_augment_slidify(\r\n    .value = ten_year_monthly,\r\n    .period = c(3,6),\r\n    .f = mean,\r\n    na.rm = TRUE,\r\n    .align = \"right\"\r\n  ) %>% \r\n  \r\n  tail(20)\r\n\r\n\r\n# A tibble: 20 x 6\r\n   date       ten_year_monthly ten_year_monthly_l~ ten_year_monthly_l~\r\n   <date>                <dbl>               <dbl>               <dbl>\r\n 1 2020-01-01          0.0176              0.0186              0.0181 \r\n 2 2020-02-01          0.0150              0.0176              0.0186 \r\n 3 2020-03-01          0.0087              0.0150              0.0176 \r\n 4 2020-04-01          0.00658             0.0087              0.0150 \r\n 5 2020-05-01          0.00674             0.00658             0.0087 \r\n 6 2020-06-01          0.00729             0.00674             0.00658\r\n 7 2020-07-01          0.00624             0.00729             0.00674\r\n 8 2020-08-01          0.0065              0.00624             0.00729\r\n 9 2020-09-01          0.00680             0.0065              0.00624\r\n10 2020-10-01          0.00787             0.00680             0.0065 \r\n11 2020-11-01          0.0087              0.00787             0.00680\r\n12 2020-12-01          0.00934             0.0087              0.00787\r\n13 2021-01-01          0.0108              0.00934             0.0087 \r\n14 2021-02-01          0.0126              0.0108              0.00934\r\n15 2021-03-01          0.0161              0.0126              0.0108 \r\n16 2021-04-01          0.0164              0.0161              0.0126 \r\n17 2021-05-01          0.0162              0.0164              0.0161 \r\n18 2021-06-01          0.0152              0.0162              0.0164 \r\n19 2021-07-01          0.0132              0.0152              0.0162 \r\n20 2021-08-01          0.0119              0.0132              0.0152 \r\n# ... with 2 more variables: ten_year_monthly_roll_3 <dbl>,\r\n#   ten_year_monthly_roll_6 <dbl>\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-08-06T07:08:15+10:00",
+    "last_modified": "2021-08-06T07:14:30+10:00",
     "input_file": "useful-timeseries-functions.knit.md"
   },
   {
