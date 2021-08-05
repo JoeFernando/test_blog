@@ -1,0 +1,61 @@
+---
+title: "Useful `timetk` and `tidyquant` Timeseries Functions"
+description: |
+  A short description of the post.
+author:
+  - name: Joe Fernando
+    url: {}
+date: 08-06-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Useful functions in timeseries analysis:
+
+```{r}
+
+# https://www.linkedin.com/feed/update/urn:li:activity:6828828919538466816/
+
+library(timetk)  
+library(tidyquant)
+library(tidyverse)
+
+# Download the 10 year UST data
+"DGS10" %>% 
+  tq_get(get = "economic.data", from = "1977-01-01") %>% 
+  
+  # Summarise by month
+  summarise_by_time(
+    .date_var = date,
+    .by       = "month",
+    ten_year_monthly = mean(price, na.rm = TRUE) / 100
+  ) %>% 
+  
+  # Lag the monthly rate by 1 and 2 months
+  tk_augment_lags(
+    .value = ten_year_monthly,
+    .lags  = c(1, 2)
+  ) %>% 
+  
+  # Generate rolling mean for 3 and 6 months
+  tk_augment_slidify(
+    .value = ten_year_monthly,
+    .period = c(3,6),
+    .f = mean,
+    na.rm = TRUE,
+    .align = "right"
+  ) %>% 
+  
+  tail(20)
+
+
+
+
+```
