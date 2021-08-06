@@ -1,5 +1,5 @@
 ---
-title: "Test Blog"
+title: "Commercial Analyst's toolkit"
 site: distill::distill_website
 listing: posts
 ---
